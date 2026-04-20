@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,15 +31,8 @@
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--gray-50); color: var(--gray-900); min-height: 100vh; }
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--gray-50);
-    color: var(--gray-900);
-    min-height: 100vh;
-  }
-
-  /* ─── HEADER ─── */
   .header {
     background: var(--white);
     border-bottom: 1px solid var(--gray-200);
@@ -54,548 +46,136 @@
     z-index: 100;
   }
 
-  .logo-area {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
+  .logo-area { display: flex; align-items: center; gap: 12px; }
+  .logo-img { height: 36px; object-fit: contain; }
+  .logo-divider { width: 1px; height: 28px; background: var(--gray-200); }
+  .portal-name { font-family: 'DM Serif Display', serif; font-size: 16px; color: var(--green-dark); }
 
-  .logo-img {
-    height: 36px;
-    object-fit: contain;
-  }
-
-  .logo-divider {
-    width: 1px;
-    height: 28px;
-    background: var(--gray-200);
-  }
-
-  .portal-name {
-    font-family: 'DM Serif Display', serif;
-    font-size: 16px;
-    color: var(--green-dark);
-    letter-spacing: 0.01em;
-  }
-
-  .header-nav {
-    display: flex;
-    gap: 4px;
-  }
-
-  .nav-btn {
-    padding: 8px 16px;
-    border-radius: var(--radius-sm);
-    border: none;
-    background: none;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--gray-500);
-    cursor: pointer;
-    transition: all 0.15s;
-  }
-
+  .header-nav { display: flex; gap: 4px; }
+  .nav-btn { padding: 8px 16px; border-radius: var(--radius-sm); border: none; background: none; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; color: var(--gray-500); cursor: pointer; transition: all 0.15s; }
   .nav-btn:hover { background: var(--gray-100); color: var(--gray-900); }
+  .nav-btn.active { background: var(--green-light); color: var(--green-dark); }
 
-  .nav-btn.active {
-    background: var(--green-light);
-    color: var(--green-dark);
-  }
-
-  /* ─── VIEWS ─── */
   .view { display: none; }
   .view.active { display: block; }
 
-  /* ─── REP FORM ─── */
-  .form-page {
-    max-width: 680px;
-    margin: 48px auto;
-    padding: 0 20px 80px;
-  }
+  .form-page { max-width: 680px; margin: 48px auto; padding: 0 20px 80px; }
+  .form-hero { text-align: center; margin-bottom: 40px; }
+  .form-hero h1 { font-family: 'DM Serif Display', serif; font-size: 32px; color: var(--green-dark); margin-bottom: 8px; }
+  .form-hero p { font-size: 15px; color: var(--gray-500); line-height: 1.6; }
 
-  .form-hero {
-    text-align: center;
-    margin-bottom: 40px;
-  }
+  .form-card { background: var(--white); border-radius: var(--radius); border: 1px solid var(--gray-200); padding: 40px; box-shadow: var(--shadow); }
 
-  .form-hero h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 32px;
-    color: var(--green-dark);
-    margin-bottom: 8px;
-  }
+  .form-section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green-mid); margin-bottom: 20px; padding-bottom: 8px; border-bottom: 1px solid var(--green-light); }
 
-  .form-hero p {
-    font-size: 15px;
-    color: var(--gray-500);
-    line-height: 1.6;
-  }
-
-  .form-card {
-    background: var(--white);
-    border-radius: var(--radius);
-    border: 1px solid var(--gray-200);
-    padding: 40px;
-    box-shadow: var(--shadow);
-  }
-
-  .form-section-label {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--green-mid);
-    margin-bottom: 20px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--green-light);
-  }
-
-  .form-row {
-    display: grid;
-    gap: 16px;
-    margin-bottom: 16px;
-  }
-
+  .form-row { display: grid; gap: 16px; margin-bottom: 16px; }
   .form-row.cols-2 { grid-template-columns: 1fr 1fr; }
   .form-row.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
 
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  label { font-size: 13px; font-weight: 500; color: var(--gray-700); }
+  label span.req { color: var(--green-mid); margin-left: 2px; }
 
-  label {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--gray-700);
-  }
-
-  label span.req {
-    color: var(--green-mid);
-    margin-left: 2px;
-  }
-
-  input, select, textarea {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    color: var(--gray-900);
-    background: var(--gray-50);
-    border: 1.5px solid var(--gray-200);
-    border-radius: var(--radius-sm);
-    padding: 10px 14px;
-    transition: border-color 0.15s, background 0.15s;
-    outline: none;
-    width: 100%;
-  }
-
-  input:focus, select:focus, textarea:focus {
-    border-color: var(--green-mid);
-    background: var(--white);
-  }
-
+  input, select, textarea { font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--gray-900); background: var(--gray-50); border: 1.5px solid var(--gray-200); border-radius: var(--radius-sm); padding: 10px 14px; transition: border-color 0.15s, background 0.15s; outline: none; width: 100%; }
+  input:focus, select:focus, textarea:focus { border-color: var(--green-mid); background: var(--white); }
   textarea { resize: vertical; min-height: 80px; line-height: 1.5; }
 
-  .price-input-wrap {
-    position: relative;
-  }
-
-  .price-input-wrap::before {
-    content: '$';
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--gray-500);
-    font-size: 14px;
-    pointer-events: none;
-  }
-
+  .price-input-wrap { position: relative; }
+  .price-input-wrap::before { content: '$'; position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--gray-500); font-size: 14px; pointer-events: none; }
   .price-input-wrap input { padding-left: 24px; }
 
   .section-gap { margin-top: 32px; }
 
-  .submit-btn {
-    width: 100%;
-    padding: 14px;
-    background: var(--green);
-    color: var(--white);
-    border: none;
-    border-radius: var(--radius-sm);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    margin-top: 32px;
-    transition: background 0.15s, transform 0.1s;
-    letter-spacing: 0.01em;
-  }
-
+  .submit-btn { width: 100%; padding: 14px; background: var(--green); color: var(--white); border: none; border-radius: var(--radius-sm); font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; margin-top: 32px; transition: background 0.15s, transform 0.1s; }
   .submit-btn:hover { background: var(--green-dark); }
   .submit-btn:active { transform: scale(0.99); }
   .submit-btn:disabled { background: var(--gray-300); cursor: not-allowed; }
 
-  .success-msg {
-    display: none;
-    text-align: center;
-    padding: 40px;
-  }
-
-  .success-icon {
-    width: 56px;
-    height: 56px;
-    background: var(--green-light);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 16px;
-    font-size: 24px;
-  }
-
-  .success-msg h3 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 22px;
-    color: var(--green-dark);
-    margin-bottom: 8px;
-  }
-
+  .success-msg { display: none; text-align: center; padding: 40px; }
+  .success-icon { width: 56px; height: 56px; background: var(--green-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 24px; }
+  .success-msg h3 { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--green-dark); margin-bottom: 8px; }
   .success-msg p { font-size: 14px; color: var(--gray-500); }
 
-  /* ─── ADMIN LOGIN ─── */
-  .admin-login-wrap {
-    max-width: 400px;
-    margin: 80px auto;
-    padding: 0 20px;
-  }
-
-  .admin-login-card {
-    background: var(--white);
-    border: 1px solid var(--gray-200);
-    border-radius: var(--radius);
-    padding: 40px;
-    box-shadow: var(--shadow);
-    text-align: center;
-  }
-
-  .admin-login-card h2 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 24px;
-    color: var(--green-dark);
-    margin-bottom: 8px;
-  }
-
-  .admin-login-card p {
-    font-size: 14px;
-    color: var(--gray-500);
-    margin-bottom: 28px;
-  }
-
-  .login-btn {
-    width: 100%;
-    padding: 12px;
-    background: var(--green);
-    color: var(--white);
-    border: none;
-    border-radius: var(--radius-sm);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    margin-top: 8px;
-    transition: background 0.15s;
-  }
-
+  .admin-login-wrap { max-width: 400px; margin: 80px auto; padding: 0 20px; }
+  .admin-login-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 40px; box-shadow: var(--shadow); text-align: center; }
+  .admin-login-card h2 { font-family: 'DM Serif Display', serif; font-size: 24px; color: var(--green-dark); margin-bottom: 8px; }
+  .admin-login-card p { font-size: 14px; color: var(--gray-500); margin-bottom: 28px; }
+  .login-btn { width: 100%; padding: 12px; background: var(--green); color: var(--white); border: none; border-radius: var(--radius-sm); font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; margin-top: 8px; transition: background 0.15s; }
   .login-btn:hover { background: var(--green-dark); }
+  .login-error { font-size: 13px; color: var(--red); margin-top: 8px; display: none; }
 
-  .login-error {
-    font-size: 13px;
-    color: var(--red);
-    margin-top: 8px;
-    display: none;
-  }
-
-  /* ─── ADMIN DASHBOARD ─── */
   .admin-dash { display: none; }
-
-  .dash-header {
-    background: var(--green-dark);
-    color: var(--white);
-    padding: 20px 32px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .dash-header h2 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 22px;
-  }
-
+  .dash-header { background: var(--green-dark); color: var(--white); padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; }
+  .dash-header h2 { font-family: 'DM Serif Display', serif; font-size: 22px; }
   .dash-header p { font-size: 13px; opacity: 0.7; margin-top: 2px; }
-
-  .logout-btn {
-    padding: 8px 16px;
-    background: rgba(255,255,255,0.15);
-    border: 1px solid rgba(255,255,255,0.25);
-    border-radius: var(--radius-sm);
-    color: var(--white);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-
+  .logout-btn { padding: 8px 16px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); border-radius: var(--radius-sm); color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 13px; cursor: pointer; transition: background 0.15s; }
   .logout-btn:hover { background: rgba(255,255,255,0.25); }
 
-  .dash-stats {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-    padding: 24px 32px;
-    background: var(--gray-50);
-    border-bottom: 1px solid var(--gray-200);
-  }
-
-  .stat-card {
-    background: var(--white);
-    border: 1px solid var(--gray-200);
-    border-radius: var(--radius-sm);
-    padding: 16px 20px;
-  }
-
+  .dash-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; padding: 24px 32px; background: var(--gray-50); border-bottom: 1px solid var(--gray-200); }
+  .stat-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-sm); padding: 16px 20px; }
   .stat-label { font-size: 12px; color: var(--gray-500); margin-bottom: 6px; font-weight: 500; }
   .stat-value { font-size: 28px; font-weight: 600; color: var(--gray-900); }
   .stat-value.green { color: var(--green); }
   .stat-value.amber { color: var(--amber); }
   .stat-value.red { color: var(--red); }
 
-  .dash-filters {
-    padding: 16px 32px;
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    border-bottom: 1px solid var(--gray-200);
-    background: var(--white);
-    flex-wrap: wrap;
-  }
-
-  .filter-btn {
-    padding: 6px 14px;
-    border-radius: 20px;
-    border: 1.5px solid var(--gray-200);
-    background: var(--white);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.15s;
-    color: var(--gray-700);
-  }
-
+  .dash-filters { padding: 16px 32px; display: flex; gap: 8px; align-items: center; border-bottom: 1px solid var(--gray-200); background: var(--white); flex-wrap: wrap; }
+  .filter-btn { padding: 6px 14px; border-radius: 20px; border: 1.5px solid var(--gray-200); background: var(--white); font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.15s; color: var(--gray-700); }
   .filter-btn:hover { border-color: var(--green-mid); color: var(--green); }
+  .filter-btn.active { background: var(--green); border-color: var(--green); color: var(--white); }
 
-  .filter-btn.active {
-    background: var(--green);
-    border-color: var(--green);
-    color: var(--white);
-  }
+  .requests-list { padding: 24px 32px; display: flex; flex-direction: column; gap: 12px; max-width: 1100px; margin: 0 auto; }
+  .empty-state { text-align: center; padding: 60px 20px; color: var(--gray-500); }
 
-  .requests-list {
-    padding: 24px 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .empty-state {
-    text-align: center;
-    padding: 60px 20px;
-    color: var(--gray-500);
-  }
-
-  .empty-state p { font-size: 15px; }
-
-  /* ─── REQUEST CARD ─── */
-  .req-card {
-    background: var(--white);
-    border: 1px solid var(--gray-200);
-    border-radius: var(--radius);
-    overflow: hidden;
-    transition: box-shadow 0.15s;
-  }
-
+  .req-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); overflow: hidden; transition: box-shadow 0.15s; }
   .req-card:hover { box-shadow: var(--shadow); }
+  .req-card-header { padding: 16px 20px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid var(--gray-100); cursor: pointer; }
 
-  .req-card-header {
-    padding: 16px 20px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    border-bottom: 1px solid var(--gray-100);
-    cursor: pointer;
-  }
-
-  .status-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-
+  .status-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
   .status-dot.pending { background: var(--amber); }
   .status-dot.approved { background: var(--green-mid); }
   .status-dot.denied { background: var(--red); }
 
-  .req-meta {
-    flex: 1;
-    min-width: 0;
-  }
+  .req-meta { flex: 1; min-width: 0; }
+  .req-drug { font-size: 15px; font-weight: 600; color: var(--gray-900); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .req-sub { font-size: 12px; color: var(--gray-500); margin-top: 2px; }
 
-  .req-drug {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--gray-900);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .req-sub {
-    font-size: 12px;
-    color: var(--gray-500);
-    margin-top: 2px;
-  }
-
-  .req-badge {
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
-    white-space: nowrap;
-  }
-
+  .req-badge { padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; white-space: nowrap; }
   .req-badge.pending { background: var(--amber-light); color: var(--amber); }
   .req-badge.approved { background: var(--green-light); color: var(--green-dark); }
   .req-badge.denied { background: var(--red-light); color: var(--red); }
 
-  .req-expand-icon {
-    font-size: 12px;
-    color: var(--gray-300);
-    transition: transform 0.2s;
-  }
-
+  .req-expand-icon { font-size: 12px; color: var(--gray-300); transition: transform 0.2s; }
   .req-card.expanded .req-expand-icon { transform: rotate(180deg); }
 
-  .req-card-body {
-    display: none;
-    padding: 20px;
-    background: var(--gray-50);
-    border-top: 1px solid var(--gray-100);
-  }
-
+  .req-card-body { display: none; padding: 20px; background: var(--gray-50); }
   .req-card.expanded .req-card-body { display: block; }
 
-  .req-details-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-bottom: 20px;
-  }
-
-  .req-detail-item { }
+  .req-details-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 20px; }
   .req-detail-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray-500); margin-bottom: 4px; }
   .req-detail-value { font-size: 14px; color: var(--gray-900); font-weight: 500; }
 
-  .req-notes-block {
-    background: var(--white);
-    border: 1px solid var(--gray-200);
-    border-radius: var(--radius-sm);
-    padding: 12px 16px;
-    font-size: 14px;
-    color: var(--gray-700);
-    line-height: 1.6;
-    margin-bottom: 20px;
-  }
+  .req-notes-block { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-sm); padding: 12px 16px; font-size: 14px; color: var(--gray-700); line-height: 1.6; margin-bottom: 20px; }
 
-  .req-actions {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-
-  .action-btn {
-    padding: 9px 20px;
-    border-radius: var(--radius-sm);
-    border: none;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.15s;
-  }
-
+  .req-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+  .action-btn { padding: 9px 20px; border-radius: var(--radius-sm); border: none; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.15s; }
   .btn-approve { background: var(--green); color: var(--white); }
   .btn-approve:hover { background: var(--green-dark); }
   .btn-deny { background: var(--red-light); color: var(--red); border: 1px solid #f5c0c0; }
   .btn-deny:hover { background: #fce8e8; }
 
-  .reply-area {
-    margin-top: 16px;
-    display: none;
-  }
-
+  .reply-area { margin-top: 16px; display: none; }
   .reply-area.show { display: block; }
+  .reply-area textarea { width: 100%; margin-bottom: 10px; background: var(--white); }
 
-  .reply-area textarea {
-    width: 100%;
-    margin-bottom: 10px;
-    background: var(--white);
-  }
-
-  .btn-send-reply {
-    padding: 9px 20px;
-    background: var(--teal);
-    color: var(--white);
-    border: none;
-    border-radius: var(--radius-sm);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-
+  .btn-send-reply { padding: 9px 20px; background: var(--teal); color: var(--white); border: none; border-radius: var(--radius-sm); font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; transition: background 0.15s; }
   .btn-send-reply:hover { background: #095f5f; }
+  .btn-cancel-reply { padding: 9px 16px; background: none; color: var(--gray-500); border: none; font-family: 'DM Sans', sans-serif; font-size: 13px; cursor: pointer; margin-left: 6px; }
 
-  .btn-cancel-reply {
-    padding: 9px 16px;
-    background: none;
-    color: var(--gray-500);
-    border: none;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    cursor: pointer;
-    margin-left: 6px;
-  }
-
-  .status-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 13px;
-    font-weight: 500;
-    padding: 6px 12px;
-    border-radius: var(--radius-sm);
-  }
-
+  .status-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; padding: 6px 12px; border-radius: var(--radius-sm); }
   .status-tag.approved { background: var(--green-light); color: var(--green-dark); }
   .status-tag.denied { background: var(--red-light); color: var(--red); }
 
-  /* ─── RESPONSIVE ─── */
   @media (max-width: 640px) {
     .form-card { padding: 24px 20px; }
     .form-row.cols-2, .form-row.cols-3 { grid-template-columns: 1fr; }
@@ -607,48 +187,44 @@
 </head>
 <body>
 
-<!-- ─── HEADER ─── -->
 <header class="header">
   <div class="logo-area">
-    <img src="https://petscriptpharmacy.com/cdn/shop/files/PS-Main-Logo.png?v=1745024086&width=200" 
+    <img src="https://petscriptpharmacy.com/cdn/shop/files/PS-Main-Logo.png?v=1745024086&width=200"
          alt="PetScript" class="logo-img"
-         onerror="this.style.display='none'; this.nextElementSibling.style.display='none'; document.querySelector('.portal-name').style.marginLeft='0';">
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='none';">
     <div class="logo-divider"></div>
     <span class="portal-name">Medication Request Portal</span>
   </div>
   <nav class="header-nav">
-    <button class="nav-btn active" onclick="showView('rep')">Submit Request</button>
-    <button class="nav-btn" onclick="showView('admin')">Admin</button>
+    <button class="nav-btn active" onclick="showView('rep', this)">Submit Request</button>
+    <button class="nav-btn" onclick="showView('admin', this)">Admin</button>
   </nav>
 </header>
 
-<!-- ─── REP FORM VIEW ─── -->
+<!-- REP FORM -->
 <div id="view-rep" class="view active">
   <div class="form-page">
     <div class="form-hero">
       <h1>Request a Medication</h1>
-      <p>Fill out the form below and the PetScript team will review your request.<br>You'll receive an email once a decision has been made.</p>
+      <p>Fill out the form below and the PetScript team will review your request.<br>You'll be notified once a decision has been made.</p>
     </div>
-
     <div class="form-card">
       <div id="form-content">
-
-        <!-- SECTION: Rep & Clinic -->
         <div class="form-section-label">Rep &amp; Clinic Information</div>
         <div class="form-row cols-2">
           <div class="form-group">
             <label>Your Name <span class="req">*</span></label>
-            <input type="text" id="rep-name" placeholder="First Last" required>
+            <input type="text" id="rep-name" placeholder="First Last">
           </div>
           <div class="form-group">
             <label>Clinic Name <span class="req">*</span></label>
-            <input type="text" id="clinic-name" placeholder="Clinic name" required>
+            <input type="text" id="clinic-name" placeholder="Clinic name">
           </div>
         </div>
         <div class="form-row cols-2">
           <div class="form-group">
             <label>Your Email <span class="req">*</span></label>
-            <input type="email" id="rep-email" placeholder="you@petscript.net" required>
+            <input type="email" id="rep-email" placeholder="you@petscript.net">
           </div>
           <div class="form-group">
             <label>Clinic Doctor / Contact</label>
@@ -656,18 +232,17 @@
           </div>
         </div>
 
-        <!-- SECTION: Medication -->
         <div class="form-section-label section-gap">Medication Details</div>
         <div class="form-row">
           <div class="form-group">
             <label>Medication Name <span class="req">*</span></label>
-            <input type="text" id="med-name" placeholder="e.g. Amoxicillin, Metronidazole" required>
+            <input type="text" id="med-name" placeholder="e.g. Amoxicillin, Metronidazole">
           </div>
         </div>
         <div class="form-row cols-3">
           <div class="form-group">
             <label>Dosage Form <span class="req">*</span></label>
-            <select id="med-form" required>
+            <select id="med-form">
               <option value="" disabled selected>Select form</option>
               <option>Capsule</option>
               <option>Tablet</option>
@@ -682,7 +257,7 @@
           </div>
           <div class="form-group">
             <label>Strength <span class="req">*</span></label>
-            <input type="text" id="med-strength" placeholder="e.g. 250mg, 50mg/mL" required>
+            <input type="text" id="med-strength" placeholder="e.g. 250mg, 50mg/mL">
           </div>
           <div class="form-group">
             <label>Quantity / Pack Size</label>
@@ -690,13 +265,12 @@
           </div>
         </div>
 
-        <!-- SECTION: Pricing -->
         <div class="form-section-label section-gap">Pricing</div>
         <div class="form-row cols-2">
           <div class="form-group">
             <label>Price Requested (per unit) <span class="req">*</span></label>
             <div class="price-input-wrap">
-              <input type="number" id="price-requested" placeholder="0.00" step="0.01" min="0" required>
+              <input type="number" id="price-requested" placeholder="0.00" step="0.01" min="0">
             </div>
           </div>
           <div class="form-group">
@@ -707,7 +281,6 @@
           </div>
         </div>
 
-        <!-- SECTION: Notes -->
         <div class="form-section-label section-gap">Additional Notes</div>
         <div class="form-row">
           <div class="form-group">
@@ -716,39 +289,34 @@
           </div>
         </div>
 
-        <button class="submit-btn" onclick="submitRequest()">Submit Request</button>
-
+        <button class="submit-btn" id="submit-btn" onclick="submitRequest()">Submit Request</button>
       </div>
 
-      <!-- SUCCESS -->
       <div class="success-msg" id="success-msg">
         <div class="success-icon">✓</div>
         <h3>Request Submitted</h3>
-        <p>The team has been notified. You'll receive an email at<br><strong id="confirm-email"></strong> once a decision is made.</p>
+        <p>The team has been notified and will review your request shortly.</p>
         <button class="submit-btn" style="max-width:200px;margin:24px auto 0;" onclick="resetForm()">Submit Another</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ─── ADMIN VIEW ─── -->
+<!-- ADMIN VIEW -->
 <div id="view-admin" class="view">
-
-  <!-- LOGIN -->
   <div class="admin-login-wrap" id="admin-login">
     <div class="admin-login-card">
       <h2>Admin Access</h2>
-      <p>Enter your admin password to view and manage requests.</p>
+      <p>Enter your admin password to manage requests.</p>
       <div class="form-group" style="text-align:left;">
         <label>Password</label>
         <input type="password" id="admin-pass" placeholder="••••••••" onkeydown="if(event.key==='Enter') adminLogin()">
       </div>
-      <p class="login-error" id="login-error">Incorrect password. Try again.</p>
+      <p class="login-error" id="login-error">Incorrect password.</p>
       <button class="login-btn" onclick="adminLogin()">Sign In</button>
     </div>
   </div>
 
-  <!-- DASHBOARD -->
   <div class="admin-dash" id="admin-dash">
     <div class="dash-header">
       <div>
@@ -759,22 +327,10 @@
     </div>
 
     <div class="dash-stats">
-      <div class="stat-card">
-        <div class="stat-label">Total Requests</div>
-        <div class="stat-value" id="stat-total">0</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Pending Review</div>
-        <div class="stat-value amber" id="stat-pending">0</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Approved</div>
-        <div class="stat-value green" id="stat-approved">0</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Denied</div>
-        <div class="stat-value red" id="stat-denied">0</div>
-      </div>
+      <div class="stat-card"><div class="stat-label">Total Requests</div><div class="stat-value" id="stat-total">0</div></div>
+      <div class="stat-card"><div class="stat-label">Pending Review</div><div class="stat-value amber" id="stat-pending">0</div></div>
+      <div class="stat-card"><div class="stat-label">Approved</div><div class="stat-value green" id="stat-approved">0</div></div>
+      <div class="stat-card"><div class="stat-label">Denied</div><div class="stat-value red" id="stat-denied">0</div></div>
     </div>
 
     <div class="dash-filters">
@@ -786,35 +342,25 @@
 
     <div class="requests-list" id="requests-list"></div>
   </div>
-
 </div>
 
 <script>
-// ─── CONFIG ───────────────────────────────────────────────
-// Replace YOUR_FORMSPREE_ID with your Formspree form ID
-// Sign up at formspree.io → New Form → copy the ID (e.g. xnqkpzab)
-const FORMSPREE_ID = 'YOUR_FORMSPREE_ID';
-const ADMIN_PASSWORD = 'petscript2026';  // Change this!
-const NOTIFY_EMAIL = 'jp@petscript.net';
+// ─── CONFIG — update WORKER_URL after deploying ok4 worker ───
+const WORKER_URL = 'https://ok4.YOUR-SUBDOMAIN.workers.dev';
+const ADMIN_PASSWORD = 'petscript2026';
 
-// ─── STORAGE ──────────────────────────────────────────────
 function getRequests() {
-  try { return JSON.parse(localStorage.getItem('ps_requests') || '[]'); } catch { return []; }
+  try { return JSON.parse(localStorage.getItem('ps_med_requests') || '[]'); } catch { return []; }
 }
+function saveRequests(arr) { localStorage.setItem('ps_med_requests', JSON.stringify(arr)); }
 
-function saveRequests(arr) {
-  localStorage.setItem('ps_requests', JSON.stringify(arr));
-}
-
-// ─── VIEW SWITCHING ───────────────────────────────────────
-function showView(v) {
+function showView(v, btn) {
   document.querySelectorAll('.view').forEach(el => el.classList.remove('active'));
   document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
   document.getElementById('view-' + v).classList.add('active');
-  event.target.classList.add('active');
+  if (btn) btn.classList.add('active');
 }
 
-// ─── REP FORM ─────────────────────────────────────────────
 async function submitRequest() {
   const fields = {
     repName: document.getElementById('rep-name').value.trim(),
@@ -831,64 +377,43 @@ async function submitRequest() {
   };
 
   if (!fields.repName || !fields.repEmail || !fields.clinicName || !fields.medName || !fields.medForm || !fields.medStrength || !fields.priceRequested) {
-    alert('Please fill in all required fields.');
-    return;
+    alert('Please fill in all required fields.'); return;
   }
 
-  const btn = document.querySelector('.submit-btn');
-  btn.disabled = true;
-  btn.textContent = 'Submitting…';
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true; btn.textContent = 'Submitting…';
 
-  // Save locally
+  fields.id = Date.now();
+  fields.status = 'pending';
+  fields.submittedAt = new Date().toISOString();
+  fields.adminReply = '';
+
   const requests = getRequests();
-  const newReq = { ...fields, id: Date.now(), status: 'pending', submittedAt: new Date().toISOString(), adminReply: '' };
-  requests.unshift(newReq);
+  requests.unshift(fields);
   saveRequests(requests);
 
-  // Send via Formspree
-  if (FORMSPREE_ID !== 'YOUR_FORMSPREE_ID') {
-    try {
-      await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-        method: 'POST',
-        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          _replyto: fields.repEmail,
-          _subject: `[PetScript Request] ${fields.medName} — ${fields.clinicName}`,
-          Rep: fields.repName,
-          Email: fields.repEmail,
-          Clinic: fields.clinicName,
-          Medication: fields.medName,
-          'Dosage Form': fields.medForm,
-          Strength: fields.medStrength,
-          Quantity: fields.medQty || 'Not specified',
-          'Price Requested': `$${fields.priceRequested}`,
-          'Competitor Price': fields.priceCompetitor ? `$${fields.priceCompetitor}` : 'Not provided',
-          Notes: fields.notes || 'None',
-        })
-      });
-    } catch(e) { console.warn('Formspree send failed', e); }
-  }
+  try {
+    await fetch(WORKER_URL + '/med-request', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(fields)
+    });
+  } catch(e) { console.warn('Worker notify failed', e); }
 
-  document.getElementById('confirm-email').textContent = fields.repEmail;
   document.getElementById('form-content').style.display = 'none';
   document.getElementById('success-msg').style.display = 'block';
-  btn.disabled = false;
-  btn.textContent = 'Submit Request';
+  btn.disabled = false; btn.textContent = 'Submit Request';
 }
 
 function resetForm() {
   document.getElementById('form-content').style.display = 'block';
   document.getElementById('success-msg').style.display = 'none';
-  document.querySelectorAll('input, textarea, select').forEach(el => {
-    if (el.type !== 'password') el.value = el.tagName === 'SELECT' ? '' : '';
-  });
+  ['rep-name','rep-email','clinic-name','clinic-contact','med-name','med-strength','med-qty','price-requested','price-competitor','notes'].forEach(id => document.getElementById(id).value = '');
   document.getElementById('med-form').selectedIndex = 0;
 }
 
-// ─── ADMIN AUTH ────────────────────────────────────────────
 function adminLogin() {
-  const pass = document.getElementById('admin-pass').value;
-  if (pass === ADMIN_PASSWORD) {
+  if (document.getElementById('admin-pass').value === ADMIN_PASSWORD) {
     document.getElementById('admin-login').style.display = 'none';
     document.getElementById('admin-dash').style.display = 'block';
     renderDash('all');
@@ -903,9 +428,7 @@ function adminLogout() {
   document.getElementById('admin-pass').value = '';
 }
 
-// ─── DASHBOARD ────────────────────────────────────────────
 let currentFilter = 'all';
-
 function setFilter(f, btn) {
   currentFilter = f;
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -915,20 +438,16 @@ function setFilter(f, btn) {
 
 function renderDash(filter) {
   const requests = getRequests();
-  const pending = requests.filter(r => r.status === 'pending').length;
-  const approved = requests.filter(r => r.status === 'approved').length;
-  const denied = requests.filter(r => r.status === 'denied').length;
-
   document.getElementById('stat-total').textContent = requests.length;
-  document.getElementById('stat-pending').textContent = pending;
-  document.getElementById('stat-approved').textContent = approved;
-  document.getElementById('stat-denied').textContent = denied;
+  document.getElementById('stat-pending').textContent = requests.filter(r => r.status === 'pending').length;
+  document.getElementById('stat-approved').textContent = requests.filter(r => r.status === 'approved').length;
+  document.getElementById('stat-denied').textContent = requests.filter(r => r.status === 'denied').length;
 
   const filtered = filter === 'all' ? requests : requests.filter(r => r.status === filter);
   const list = document.getElementById('requests-list');
 
-  if (filtered.length === 0) {
-    list.innerHTML = `<div class="empty-state"><p>No ${filter === 'all' ? '' : filter} requests yet.</p></div>`;
+  if (!filtered.length) {
+    list.innerHTML = `<div class="empty-state"><p>No ${filter === 'all' ? '' : filter + ' '}requests yet.</p></div>`;
     return;
   }
 
@@ -945,57 +464,31 @@ function renderDash(filter) {
       </div>
       <div class="req-card-body">
         <div class="req-details-grid">
-          <div class="req-detail-item">
-            <div class="req-detail-label">Rep</div>
-            <div class="req-detail-value">${esc(req.repName)}</div>
-          </div>
-          <div class="req-detail-item">
-            <div class="req-detail-label">Rep Email</div>
-            <div class="req-detail-value">${esc(req.repEmail)}</div>
-          </div>
-          <div class="req-detail-item">
-            <div class="req-detail-label">Clinic</div>
-            <div class="req-detail-value">${esc(req.clinicName)}</div>
-          </div>
-          <div class="req-detail-item">
-            <div class="req-detail-label">Clinic Contact</div>
-            <div class="req-detail-value">${req.clinicContact || '—'}</div>
-          </div>
-          <div class="req-detail-item">
-            <div class="req-detail-label">Requested Price</div>
-            <div class="req-detail-value" style="color:var(--green);font-weight:600;">$${esc(req.priceRequested)}</div>
-          </div>
-          <div class="req-detail-item">
-            <div class="req-detail-label">Competitor Price</div>
-            <div class="req-detail-value">${req.priceCompetitor ? '$' + esc(req.priceCompetitor) : '—'}</div>
-          </div>
-          <div class="req-detail-item">
-            <div class="req-detail-label">Quantity</div>
-            <div class="req-detail-value">${req.medQty || '—'}</div>
-          </div>
-          <div class="req-detail-item">
-            <div class="req-detail-label">Submitted</div>
-            <div class="req-detail-value">${fmtDate(req.submittedAt)}</div>
-          </div>
+          <div class="req-detail-item"><div class="req-detail-label">Rep</div><div class="req-detail-value">${esc(req.repName)}</div></div>
+          <div class="req-detail-item"><div class="req-detail-label">Rep Email</div><div class="req-detail-value">${esc(req.repEmail)}</div></div>
+          <div class="req-detail-item"><div class="req-detail-label">Clinic</div><div class="req-detail-value">${esc(req.clinicName)}</div></div>
+          <div class="req-detail-item"><div class="req-detail-label">Clinic Contact</div><div class="req-detail-value">${req.clinicContact || '—'}</div></div>
+          <div class="req-detail-item"><div class="req-detail-label">Requested Price</div><div class="req-detail-value" style="color:var(--green);font-weight:600;">$${esc(req.priceRequested)}</div></div>
+          <div class="req-detail-item"><div class="req-detail-label">Competitor Price</div><div class="req-detail-value">${req.priceCompetitor ? '$'+esc(req.priceCompetitor) : '—'}</div></div>
+          <div class="req-detail-item"><div class="req-detail-label">Quantity</div><div class="req-detail-value">${req.medQty || '—'}</div></div>
+          <div class="req-detail-item"><div class="req-detail-label">Submitted</div><div class="req-detail-value">${fmtDate(req.submittedAt)}</div></div>
         </div>
-
         ${req.notes ? `<div class="req-notes-block"><strong style="font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--gray-500);">Notes</strong><br>${esc(req.notes)}</div>` : ''}
-
         ${req.status === 'pending' ? `
           <div class="req-actions">
-            <button class="action-btn btn-approve" onclick="openReply(${req.id}, 'approved')">Approve</button>
-            <button class="action-btn btn-deny" onclick="openReply(${req.id}, 'denied')">Deny</button>
+            <button class="action-btn btn-approve" onclick="openReply(${req.id},'approved')">Approve</button>
+            <button class="action-btn btn-deny" onclick="openReply(${req.id},'denied')">Deny</button>
           </div>
           <div class="reply-area" id="reply-${req.id}">
-            <label style="font-size:13px;font-weight:500;color:var(--gray-700);display:block;margin-bottom:6px;" id="reply-label-${req.id}">Reply to rep (optional)</label>
-            <textarea id="reply-text-${req.id}" placeholder="Add a message to send to the rep..."></textarea>
-            <button class="btn-send-reply" onclick="confirmDecision(${req.id})">Send &amp; Confirm</button>
+            <label style="font-size:13px;font-weight:500;color:var(--gray-700);display:block;margin-bottom:6px;" id="reply-label-${req.id}"></label>
+            <textarea id="reply-text-${req.id}" placeholder="Add a message (optional)..."></textarea>
+            <button class="btn-send-reply" onclick="confirmDecision(${req.id})">Confirm &amp; Notify Slack</button>
             <button class="btn-cancel-reply" onclick="closeReply(${req.id})">Cancel</button>
           </div>
         ` : `
           <div class="status-tag ${req.status}">
             ${req.status === 'approved' ? '✓ Approved' : '✕ Denied'}
-            ${req.adminReply ? ` — "${esc(req.adminReply)}"` : ''}
+            ${req.adminReply ? ` — ${esc(req.adminReply)}` : ''}
           </div>
         `}
       </div>
@@ -1009,10 +502,9 @@ function openReply(id, status) {
   pendingDecision[id] = status;
   const area = document.getElementById(`reply-${id}`);
   area.classList.add('show');
-  const label = document.getElementById(`reply-label-${id}`);
-  label.textContent = status === 'approved'
-    ? 'Message to rep (optional — approval will be emailed)'
-    : 'Reason for denial (optional — will be emailed to rep)';
+  document.getElementById(`reply-label-${id}`).textContent = status === 'approved'
+    ? 'Message to rep — will post to Slack (optional)'
+    : 'Reason for denial — will post to Slack (optional)';
 }
 
 function closeReply(id) {
@@ -1020,9 +512,9 @@ function closeReply(id) {
   delete pendingDecision[id];
 }
 
-function confirmDecision(id) {
+async function confirmDecision(id) {
   const status = pendingDecision[id];
-  const reply = document.getElementById(`reply-${id}`).querySelector('textarea').value.trim();
+  const reply = document.getElementById(`reply-text-${id}`).value.trim();
   const requests = getRequests();
   const req = requests.find(r => r.id === id);
   if (!req) return;
@@ -1032,30 +524,21 @@ function confirmDecision(id) {
   req.decidedAt = new Date().toISOString();
   saveRequests(requests);
 
-  // In production: send email to rep via Formspree or backend
-  // For now shows confirmation
-  alert(`Request ${status === 'approved' ? 'approved' : 'denied'}.\n\nIn production, an email will be sent to ${req.repEmail}.\n\nTo enable email notifications, connect this to your Cloudflare worker or a Formspree endpoint.`);
+  try {
+    await fetch(WORKER_URL + '/med-decision', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(req)
+    });
+  } catch(e) { console.warn('Worker decision notify failed', e); }
 
   renderDash(currentFilter);
 }
 
-function toggleCard(id) {
-  document.getElementById(`card-${id}`).classList.toggle('expanded');
-}
-
-// ─── HELPERS ──────────────────────────────────────────────
-function esc(s) {
-  if (!s) return '';
-  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-
+function toggleCard(id) { document.getElementById(`card-${id}`).classList.toggle('expanded'); }
+function esc(s) { if (!s) return ''; return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
-
-function fmtDate(iso) {
-  if (!iso) return '—';
-  const d = new Date(iso);
-  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-}
+function fmtDate(iso) { if (!iso) return '—'; return new Date(iso).toLocaleDateString('en-US', { month:'short', day:'numeric', year:'numeric' }); }
 </script>
 </body>
 </html>
